@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.viewmodels
+package ch.bfh.teamulrich.treasuremap.viewmodels
 
 import android.app.Application
 import android.hardware.Sensor
@@ -12,12 +12,12 @@ import androidx.lifecycle.AndroidViewModel
 import kotlin.math.max
 import kotlin.math.sqrt
 
-data class MetalDetectorState(var currentMagnitude: Double = 1.0, var maxMagnitude: Double = 1000.0)
+data class TreasureMapState(var currentMagnitude: Double = 1.0, var maxMagnitude: Double = 1000.0)
 
-class MetalDetectorViewModel(application: Application) : AndroidViewModel(application),
+class TreasureMapViewModel(application: Application) : AndroidViewModel(application),
     SensorEventListener {
 
-    var state by mutableStateOf(MetalDetectorState())
+    var state by mutableStateOf(TreasureMapState())
         private set
 
     private val sensorManager = application.getSystemService(SensorManager::class.java)

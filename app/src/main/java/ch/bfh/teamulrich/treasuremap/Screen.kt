@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector
+package ch.bfh.teamulrich.treasuremap
 
 import androidx.annotation.DrawableRes
 

@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector
+package ch.bfh.teamulrich.treasuremap
 
 import android.Manifest
 import android.os.Bundle
@@ -16,11 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import ch.bfh.teamulrich.metaldetector.ui.BottomBarNavigation
-import ch.bfh.teamulrich.metaldetector.ui.theme.MetalDetectorTheme
-import ch.bfh.teamulrich.metaldetector.views.WithPermission
-import ch.bfh.teamulrich.metaldetector.views.reader.QRCodeView
-import ch.bfh.teamulrich.metaldetector.views.sensor.MetalDetectorView
+import ch.bfh.teamulrich.treasuremap.ui.BottomBarNavigation
+import ch.bfh.teamulrich.treasuremap.ui.theme.TreasureMapTheme
+import ch.bfh.teamulrich.treasuremap.views.WithPermission
+import ch.bfh.teamulrich.treasuremap.views.reader.QRCodeView
+import ch.bfh.teamulrich.treasuremap.views.sensor.TreasureMapView
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
 /**
@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
 
-            MetalDetectorTheme() {
+            TreasureMapTheme() {
                 WithPermission(permission = Manifest.permission.CAMERA, noPermissionContent = {
                     Column(
                         verticalArrangement = Arrangement.Center,
@@ -57,7 +57,7 @@ class MainActivity : ComponentActivity() {
                             startDestination = Screen.Sensor.route,
                             Modifier.padding(innerPadding)
                         ) {
-                            composable(Screen.Sensor.route) { MetalDetectorView() }
+                            composable(Screen.Sensor.route) { TreasureMapView() }
                             composable(Screen.Reader.route) { QRCodeView() }
                         }
                 }

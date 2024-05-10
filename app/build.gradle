@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'ch.bfh.teamulrich.metaldetector'
+    namespace 'ch.bfh.teamulrich.treasuremap'
     compileSdk 34
 
     defaultConfig {
-        applicationId "ch.bfh.teamulrich.metaldetector"
+        applicationId "ch.bfh.teamulrich.treasuremap"
         minSdk 24
         targetSdk 34
         versionCode 1

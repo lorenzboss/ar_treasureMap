@@ -1,10 +1,10 @@
-package ch.bfh.teamulrich.metaldetector.viewmodels
+package ch.bfh.teamulrich.treasuremap.viewmodels
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
-import ch.bfh.teamulrich.metaldetector.CameraActivity
+import ch.bfh.teamulrich.treasuremap.CameraActivity
 
 class ReceiveQRCode: ActivityResultContract<Unit, String?>() {
 

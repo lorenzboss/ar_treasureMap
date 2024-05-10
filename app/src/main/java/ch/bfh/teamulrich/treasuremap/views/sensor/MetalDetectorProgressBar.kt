@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.views.sensor
+package ch.bfh.teamulrich.treasuremap.views.sensor
 
 import android.content.res.Configuration
 import androidx.compose.animation.core.animateFloatAsState
@@ -12,10 +12,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import ch.bfh.teamulrich.metaldetector.ui.theme.MetalDetectorTheme
+import ch.bfh.teamulrich.treasuremap.ui.theme.TreasureMapTheme
 
 @Composable
-fun MetalDetectorProgressBar(progress: Float, modifier: Modifier = Modifier) {
+fun TreasureMapProgressBar(progress: Float, modifier: Modifier = Modifier) {
     val animatedProgress: Float by animateFloatAsState(targetValue = progress)
     LinearProgressIndicator(progress = animatedProgress, modifier.padding(8.dp))
 }
@@ -23,12 +23,12 @@ fun MetalDetectorProgressBar(progress: Float, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Preview(name = "Night Mode", uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun MetalDetectorProgressBarPreview() {
-    MetalDetectorTheme {
+fun TreasureMapProgressBarPreview() {
+    TreasureMapTheme {
         Column {
-            MetalDetectorProgressBar(progress = 0.5f)
+            TreasureMapProgressBar(progress = 0.5f)
             Spacer(modifier = Modifier.height(8.dp))
-            MetalDetectorProgressBar(progress = 0.25f)
+            TreasureMapProgressBar(progress = 0.25f)
         }
     }
 }

@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.ui.theme
+package ch.bfh.teamulrich.treasuremap.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

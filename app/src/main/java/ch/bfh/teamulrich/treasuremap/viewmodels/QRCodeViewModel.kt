@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.viewmodels
+package ch.bfh.teamulrich.treasuremap.viewmodels
 
 import android.app.Application
 import android.content.ActivityNotFoundException
@@ -8,7 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
-import ch.bfh.teamulrich.metaldetector.R
+import ch.bfh.teamulrich.treasuremap.R
 import org.json.JSONObject
 
 class QRCodeViewModel(application: Application) : AndroidViewModel(application) {

@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.views.sensor
+package ch.bfh.teamulrich.treasuremap.views.sensor
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,12 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import ch.bfh.teamulrich.metaldetector.ui.theme.MetalDetectorTheme
-import ch.bfh.teamulrich.metaldetector.viewmodels.MetalDetectorState
+import ch.bfh.teamulrich.treasuremap.ui.theme.TreasureMapTheme
+import ch.bfh.teamulrich.treasuremap.viewmodels.TreasureMapState
 import kotlin.math.roundToInt
 
 @Composable
-fun MetalDetectorInfoView(state: MetalDetectorState, modifier: Modifier = Modifier) {
+fun TreasureMapInfoView(state: TreasureMapState, modifier: Modifier = Modifier) {
     Column {
         Row {
             // TODO: display current magnetic reading
@@ -26,8 +26,8 @@ fun MetalDetectorInfoView(state: MetalDetectorState, modifier: Modifier = Modifi
 
 @Preview
 @Composable
-fun MetalDetectorInfoViewPreview() {
-    MetalDetectorTheme {
-        MetalDetectorInfoView(state = MetalDetectorState(), modifier = Modifier.fillMaxWidth())
+fun TreasureMapInfoViewPreview() {
+    TreasureMapTheme {
+        TreasureMapInfoView(state = TreasureMapState(), modifier = Modifier.fillMaxWidth())
     }
 }

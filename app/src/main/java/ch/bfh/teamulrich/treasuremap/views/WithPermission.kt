@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.views
+package ch.bfh.teamulrich.treasuremap.views
 
 import android.Manifest
 import androidx.compose.material.Button

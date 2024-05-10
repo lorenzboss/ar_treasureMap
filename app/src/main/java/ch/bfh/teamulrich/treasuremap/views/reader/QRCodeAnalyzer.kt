@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.views.reader
+package ch.bfh.teamulrich.treasuremap.views.reader
 
 import androidx.camera.core.ExperimentalGetImage
 import androidx.camera.core.ImageAnalysis

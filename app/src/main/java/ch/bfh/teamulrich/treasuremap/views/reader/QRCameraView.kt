@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.views.reader
+package ch.bfh.teamulrich.treasuremap.views.reader
 
 import android.content.Context
 import android.net.Uri

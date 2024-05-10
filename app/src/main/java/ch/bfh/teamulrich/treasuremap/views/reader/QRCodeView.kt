@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.views.reader
+package ch.bfh.teamulrich.treasuremap.views.reader
 
 import android.content.Context
 import android.widget.Toast
@@ -18,8 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import ch.bfh.teamulrich.metaldetector.viewmodels.QRCodeViewModel
-import ch.bfh.teamulrich.metaldetector.viewmodels.ReceiveQRCode
+import ch.bfh.teamulrich.treasuremap.viewmodels.QRCodeViewModel
+import ch.bfh.teamulrich.treasuremap.viewmodels.ReceiveQRCode
 
 
 @Composable

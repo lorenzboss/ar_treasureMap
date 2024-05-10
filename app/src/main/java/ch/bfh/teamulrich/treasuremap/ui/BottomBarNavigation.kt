@@ -1,4 +1,4 @@
-package ch.bfh.teamulrich.metaldetector.ui
+package ch.bfh.teamulrich.treasuremap.ui
 
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -7,7 +7,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
-import ch.bfh.teamulrich.metaldetector.Screen
+import ch.bfh.teamulrich.treasuremap.Screen
 
 @Composable
 fun BottomBarNavigation(navController: NavController) {
