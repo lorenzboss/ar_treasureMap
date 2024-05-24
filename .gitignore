@@ -17,3 +17,6 @@ proguard/
 # Gradle Wrapper
 gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.jar.sha256
+
+# macOS files
+.DS_Store
