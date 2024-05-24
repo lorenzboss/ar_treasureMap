@@ -16,52 +16,51 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ch.bfh.teamulrich.treasuremap.data.MarkerManager
 import ch.bfh.teamulrich.treasuremap.ui.BottomBarNavigation
 import ch.bfh.teamulrich.treasuremap.ui.theme.TreasureMapTheme
+import ch.bfh.teamulrich.treasuremap.views.PinsView
+import ch.bfh.teamulrich.treasuremap.views.TreasureMapView
 import ch.bfh.teamulrich.treasuremap.views.WithPermission
-import ch.bfh.teamulrich.treasuremap.views.reader.QRCodeView
-import ch.bfh.teamulrich.treasuremap.views.sensor.TreasureMapView
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 
-/**
- * The main activity.
- */
 class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalPermissionsApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        MarkerManager.getInstance(this)
+
         setContent {
             val navController = rememberNavController()
 
-            TreasureMapTheme() {
-                WithPermission(permission = Manifest.permission.CAMERA, noPermissionContent = {
-                    Column(
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = Modifier.fillMaxSize()
-                    ) {
-                        Button(onClick = { it.launchPermissionRequest() }) {
-                            Text("Grant camera permission")
+            TreasureMapTheme {
+                WithPermission(permission = Manifest.permission.ACCESS_FINE_LOCATION,
+                    noPermissionContent = {
+                        Column(
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier.fillMaxSize()
+                        ) {
+                            Button(onClick = { it.launchPermissionRequest() }) {
+                                Text("Grant permissions")
+                            }
                         }
-                    }
-                }) {
-                Scaffold(
-                    bottomBar = {
+                    }) {
+                    Scaffold(bottomBar = {
                         BottomBarNavigation(navController = navController)
-                    }
-                ) {
-                    innerPadding ->
+                    }) { innerPadding ->
                         NavHost(
                             navController,
-                            startDestination = Screen.Sensor.route,
-                            Modifier.padding(innerPadding)
+                            startDestination = Screen.Map.route,
+                            modifier = Modifier.padding(innerPadding)
                         ) {
-                            composable(Screen.Sensor.route) { TreasureMapView() }
-                            composable(Screen.Reader.route) { QRCodeView() }
+                            composable(Screen.Map.route) { TreasureMapView() }
+                            composable(Screen.Pin.route) { PinsView() }
                         }
+                    }
                 }
-            }}
+            }
         }
     }
 }
