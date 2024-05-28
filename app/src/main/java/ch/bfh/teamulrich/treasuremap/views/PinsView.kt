@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -108,7 +109,7 @@ fun PinsView() {
 fun TopAppBarWithPins(context: Context = LocalContext.current) {
     TopAppBar(modifier = Modifier.zIndex(1f), title = { Text("Pins") }, actions = {
         Button(
-            onClick = { sendQRCodesToLogApp(context) },
+            onClick = { sendPinsToLogApp(context) },
             modifier = Modifier
                 .size(width = 130.dp, height = 50.dp)
                 .clip(RoundedCornerShape(25.dp))
@@ -129,7 +130,7 @@ fun TopAppBarWithPins(context: Context = LocalContext.current) {
     })
 }
 
-fun sendQRCodesToLogApp(context: Context) {
+fun sendPinsToLogApp(context: Context) {
     val markerManager = MarkerManager.getInstance(context)
     val markers = markerManager.getMarkers().values.toList()
 
@@ -155,5 +156,10 @@ fun sendQRCodesToLogApp(context: Context) {
         context.startActivity(intent)
     } catch (e: ActivityNotFoundException) {
         Log.e("LogBookError", " LogBook application is not installed on this device.")
+        Toast.makeText(
+            context,
+            "LogBook application is not installed on this device.",
+            Toast.LENGTH_LONG
+        ).show()
     }
 }
